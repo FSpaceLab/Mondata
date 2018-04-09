@@ -1,0 +1,85 @@
+{% load staticfiles %}
+{% load l10n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css_bs/bootstrap.css' %}">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+          google.charts.load('current', {'packages':['line']});
+          google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+
+          var data = new google.visualization.DataTable();
+          data.addColumn('number', 'Record ID');
+          data.addColumn('number', 'Volt');
+          data.addColumn('number', 'Amper');
+          data.addColumn('number', 'Watt');
+          data.addColumn('number', 'Watt/hour');
+
+          data.addRows([
+            {% for record in records %}
+                [{{ record.id }}, {{ record.volt|unlocalize }}, {{ record.amper|unlocalize }}, {{ record.watt|unlocalize }}, {{ record.watt_hour|unlocalize }}],
+            {% endfor %}
+          ]);
+
+          var options = {
+            chart: {
+              title: 'Графік зміни вихідних параметрів сонячної панелі',
+              subtitle: ''
+            },
+            width: 900,
+            height: 500,
+            axes: {
+              x: {
+                0: {side: 'bottom'}
+              }
+            }
+          };
+
+          var chart = new google.charts.Line(document.getElementById('line_top_x'));
+
+          chart.draw(data, google.charts.Line.convertOptions(options));
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Records ID</th>
+                            <th scope="col">Volt</th>
+                            <th scope="col">Amper</th>
+                            <th scope="col">Watt</th>
+                            <th scope="col">Watt/hour</th>
+                            <th scope="col">Date & time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for record in records %}
+                            <tr>
+                                <th scope="row">{{ record.id }}</th>
+                                <td>{{ record.volt }}</td>
+                                <td>{{ record.amper }}</td>
+                                <td>{{ record.watt }}</td>
+                                <td>{{ record.watt_hour }}</td>
+                                <td>{{ record.dt }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-12">
+                <hr>
+                <div id="line_top_x"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
