@@ -1,0 +1,9 @@
+.idea/
+db1.sqlite3
+*.egg-info
+*.pot
+*.py[cod]
+.tox/
+__pycache__
+*.jpg
+*.png

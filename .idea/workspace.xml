@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0059b5c2-598f-44af-8e11-27a8521715dd" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/static/css_bs/custom.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mon/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mon/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mon/templates/mon/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/mon/templates/mon/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/monitoring/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/monitoring/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -54,7 +49,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mon/templates/mon/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="123">
@@ -63,6 +58,15 @@
                 <element signature="n#style#0;n#button#0;n#h5#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="e#3570#3576#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="36">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -114,6 +118,7 @@
         <option value="$PROJECT_DIR$/mon/models.py" />
         <option value="$PROJECT_DIR$/mon/views.py" />
         <option value="$PROJECT_DIR$/mon/templates/mon/index.html" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -270,7 +275,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.5363924" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3312102" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3312102" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24963397" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
@@ -563,6 +568,13 @@
             <element signature="n#style#0;n#button#0;n#h5#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="e#3570#3576#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
