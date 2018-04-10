@@ -3,8 +3,8 @@ from .models import Record
 
 
 def home(request):
-    records = Record.objects.all().order_by('-dt')[:5]
-
+    for_charts = Record.objects.all().order_by('-dt')
+    records = for_charts[:5]
     return render(request, 'mon/index.html', locals())
 
 
