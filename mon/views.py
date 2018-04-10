@@ -3,7 +3,7 @@ from .models import Record
 
 
 def home(request):
-    records = Record.objects.all().order_by('dt')[:5]
+    records = Record.objects.all().order_by('-dt')[:5]
 
     return render(request, 'mon/index.html', locals())
 
