@@ -22,6 +22,12 @@ def home(request):
     return render(request, 'mon/index.html', locals())
 
 
+def home2(request):
+    for_charts = Record.objects.all().order_by('dt')#.filter(dt__range=(sh, eh))
+
+    return render(request, 'mon/index2.html', locals())
+
+
 def add_record(request):
     if request.GET:
         volt = request.GET.get('v')
