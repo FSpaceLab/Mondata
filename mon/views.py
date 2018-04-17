@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from .models import Record
-from datetime import datetime
+from django.utils import timezone
 
 def home(request):
     records = Record.objects.all().order_by('-dt')[:5]
@@ -8,22 +8,20 @@ def home(request):
     if request.GET:
         pass
     else:
-        # # eh -- end hour | sh -- start hour
-        # eh = datetime.now()
-        # if eh.hour != 0:
-        #     sh = datetime(eh.year, eh.month, eh.day, eh.hour-1, eh.minute, eh.second, eh.microsecond, eh.tzinfo)
-        # else:
-        #     sh = datetime(eh.year, eh.month, eh.day, 23, eh.minute, eh.second, eh.microsecond, eh.tzinfo)
-        #
-        # print(str(eh) + "   " + str(sh))
-
-        for_charts = Record.objects.all().order_by('-dt')#.filter(dt__range=(sh, eh))
+        eh = timezone.now()
+        sh = eh.replace(hour=eh.hour - 1)
+        for_charts = Record.objects.all().order_by('dt').filter(dt__range=(sh, eh))
 
     return render(request, 'mon/index.html', locals())
 
 
 def home2(request):
-    for_charts = Record.objects.all().order_by('dt')#.filter(dt__range=(sh, eh))
+    eh = timezone.now()
+    sh = eh.replace(hour=eh.hour - 1)
+    print(str(eh) + "   " + str(sh))
+    for_charts = Record.objects.all().order_by('dt').filter(dt__range=(sh, eh))
+    for chart in for_charts:
+        print(chart)
 
     return render(request, 'mon/index2.html', locals())
 

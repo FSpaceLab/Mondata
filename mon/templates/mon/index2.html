@@ -52,7 +52,7 @@ var chart = AmCharts.makeChart("chartdiv", {
     "chartCursor": {
        "limitToGraph":"g1"
     },
-    "categoryField": "date",
+    "categoryField": "time",
     "categoryAxis": {
         "parseDates": true,
         "axisColor": "#DADADA",
@@ -80,7 +80,6 @@ function zoomChart() {
 function generateChartData() {
     var chartData = [];
     {% for record in for_charts %}
-        {#[{{ record.volt|unlocalize }}, {{ record.amper|unlocalize }}, , {{ record.watt_hour|unlocalize }}],#}
         var newDate = new Date({{ record.dt|date:'Y, n, d, H, m, s' }});
         var visits = {{ record.watt|unlocalize }};
 
